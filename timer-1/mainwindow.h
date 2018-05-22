@@ -30,6 +30,7 @@ private:
     Console *m_console = nullptr;
     void processMessage(const QString &b);
     void toggle_it(bool toggled,int button,int led_pin);
+    BallAnimation *banimate;
 };
 
 #endif // MAINWINDOW_H
