@@ -5,9 +5,19 @@
 
 class Ballanimation : public QWidget
 {
+    Q_OBJECT
+
 public:
-    Ballanimation();
+    Ballanimation(QWidget *parent = nullptr);
     void setOrigin(const QPoint &origin);
+    void addToOrigin(const QPoint &origin);
+signals:
+
+public slots:
+    void paintEvent(QPaintEvent *event);
+
+private:
+    QPoint m_origin;
 
 };
 

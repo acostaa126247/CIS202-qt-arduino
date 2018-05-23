@@ -3,19 +3,28 @@
 #include <QPaintEvent>
 #include <QPainter>
 
-Ballanimation::Ballanimation(QWidget *parent) : QWidget(parent)
+Ballanimation::Ballanimation(QWidget *parent) :
+    QWidget(parent),
+    m_origin(QPoint(0,0))
 {
-    setGeometry(0,0,100,100);
+    setFixedSize(100,100);
 }
 
-void Ballanimation::setOrigin()
+void Ballanimation::setOrigin(const QPoint &origin)
 {
+    m_origin = origin;
+}
 
+void Ballanimation::addToOrigin(const QPoint &origin)
+{
+    m_origin += origin;
 }
 
 void Ballanimation::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    painter.drawEllipse(QPoint(50,50),25,25);
-
+    painter.drawRect(QRect(0,0, width()-1,height()-1));
+    painter.setBrush(Qt::blue);
+    painter.setPen(Qt::red);
+    painter.drawEllipse(m_origin,25,25);
 }

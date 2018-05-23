@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 // https://doc.qt.io/qt-5/qtimer.html
+#include "ballanimation.h"
 #include <QLabel>
 #include <QMainWindow>
 #include <QPushButton>
@@ -30,7 +31,7 @@ private:
     Console *m_console = nullptr;
     void processMessage(const QString &b);
     void toggle_it(bool toggled,int button,int led_pin);
-    BallAnimation *banimate;
+    Ballanimation *banimate;
 };
 
 #endif // MAINWINDOW_H
