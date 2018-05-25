@@ -11,6 +11,7 @@ public:
     Ballanimation(QWidget *parent = nullptr);
     void setOrigin(const QPoint &origin);
     void addToOrigin(const QPoint &origin);
+    void bounce();
 signals:
 
 public slots:
@@ -18,7 +19,7 @@ public slots:
 
 private:
     QPoint m_origin;
-
+   //QPoint h_origin;
 };
 
 #endif // BALLANIMATION_H

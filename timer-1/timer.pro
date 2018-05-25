@@ -27,9 +27,9 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         console.cpp \
-    ballanimation.cpp
+        ballanimation.cpp \
 
 HEADERS += \
     mainwindow.h \
     console.h \ 
-    ballanimation.h
+    ballanimation.h \
